@@ -55,22 +55,12 @@ export default function Header({
                   language === "en" ? "translate-x-0 " : "translate-x-10"
                 }`}
               ></div>
-              {/* <div
-                className={`absolute top-1.5 w-7 h-7 bg-[#1CAB55] rounded-full shadow-md transition duration-300 flex items-center justify-center ${
-                  language === "en" ? "left-1.5" : "right-1.5"
-                }`}
-              >
-                <span className="text-white text-xs font-bold">
-                  {language === "en" ? "EN" : "BN"}
-                </span>
-              </div> */}
             </button>
           </div>
 
           <div className="flex items-center justify-center gap-2 group">
-            
-              <FaPhoneAlt className="text-[#1CAB55] cursor-pointer text-lg" />
-            
+            <FaPhoneAlt className="text-[#1CAB55] cursor-pointer text-lg" />
+
             <p className="text-[#1CAB55] font-bold cursor-pointer text-lg hidden sm:block">
               16910
             </p>
