@@ -34,45 +34,44 @@ export default function Header({
           <div className="relative">
             <button
               onClick={handleToggle}
-              className="flex items-center justify-between bg-white border border-gray-200 w-24 h-10 rounded-full px-3 relative cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#1CAB55] focus:ring-opacity-50"
-              aria-label="Toggle language"
+              className="flex items-center justify-between bg-white border border-gray-200 w-22 h-10 rounded-full px-3 relative cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#1CAB55] focus:ring-opacity-50"
             >
               <span
                 className={`text-sm font-medium ${
-                  language === "en" ? "text-[#1CAB55]" : "text-gray-500"
+                  language === "bn" ? "text-[#1CAB55]" : "text-gray-500"
                 }`}
               >
                 EN
               </span>
               <span
                 className={`text-sm font-medium ${
-                  language === "bn" ? "text-[#1CAB55]" : "text-gray-500"
+                  language === "en" ? "text-[#1CAB55]" : "text-gray-500"
                 }`}
               >
                 BN
               </span>
               <div
-                className={`absolute top-1 bottom-1 w-10 bg-[#1CAB55] bg-opacity-20 rounded-full transition-all duration-300 ${
-                  language === "en" ? "left-1" : "right-1"
+                className={`absolute top-1 bottom-2 left-1.5 w-8 h-8 bg-[#1CAB55] bg-opacity-20 rounded-full transition duration-300 ${
+                  language === "en" ? "translate-x-0 " : "translate-x-10"
                 }`}
               ></div>
-              <div
-                className={`absolute top-1.5 w-7 h-7 bg-[#1CAB55] rounded-full shadow-md transition-all duration-300 flex items-center justify-center ${
+              {/* <div
+                className={`absolute top-1.5 w-7 h-7 bg-[#1CAB55] rounded-full shadow-md transition duration-300 flex items-center justify-center ${
                   language === "en" ? "left-1.5" : "right-1.5"
                 }`}
               >
                 <span className="text-white text-xs font-bold">
                   {language === "en" ? "EN" : "BN"}
                 </span>
-              </div>
+              </div> */}
             </button>
           </div>
 
           <div className="flex items-center justify-center gap-2 group">
-            <div className="p-2 bg-[#1CAB55] bg-opacity-10 rounded-full group-hover:bg-opacity-20 transition-all">
-              <FaPhoneAlt className="text-[#1CAB55] cursor-pointer text-sm" />
-            </div>
-            <p className="text-[#1CAB55] font-bold cursor-pointer text-sm hidden sm:block">
+            
+              <FaPhoneAlt className="text-[#1CAB55] cursor-pointer text-lg" />
+            
+            <p className="text-[#1CAB55] font-bold cursor-pointer text-lg hidden sm:block">
               16910
             </p>
           </div>

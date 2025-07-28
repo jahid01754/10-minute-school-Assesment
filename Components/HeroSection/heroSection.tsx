@@ -1,7 +1,7 @@
 "use client";
 
-// import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import HeroCard from "../HeroCard/heroCard";
 import { Data } from "@/types/types";
 
 type HomeProps = {
@@ -9,25 +9,35 @@ type HomeProps = {
 };
 
 export default function HeroSection({ data }: HomeProps) {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   useEffect(() => {
-    console.log("Data: ", data);
+    console.log("HeroSection Data: ", data);
   }, [data]);
+
+  const media = data?.media || [];
 
   return (
     <div
       className="bg-cover bg-center"
       style={{ backgroundImage: "url('/hero-bg-imgae.jpg')" }}
     >
-      <div className="container-custom relative w-full h-[19rem] ">
+      <div className="container-custom relative w-full h-[19rem]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-end items-center">
-          <div className="">
+          {/* Left side */}
+          <div>
             <p className="text-white text-4xl font-semibold">{data?.title}</p>
             <div
               className="text-gray-100 text-lg font-semibold mt-4"
               dangerouslySetInnerHTML={{ __html: data?.description || "" }}
             />
           </div>
-          <div className="h-[20rem] w-[70%] border border-red-400 mt-20"></div>
+
+          {/* Right side */}
+          <HeroCard 
+            media={media} 
+            thumbsSwiper={thumbsSwiper} 
+            setThumbsSwiper={setThumbsSwiper} />
         </div>
       </div>
     </div>

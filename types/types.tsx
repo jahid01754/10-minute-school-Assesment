@@ -1,7 +1,10 @@
 export interface Medium {
-  url: string;
-  type: string;
+  name: string;
+  resource_type: string;
+  resource_value: string;
+  thumbnail_url?: string;
 }
+
 
 export interface Checklist {
   id: number;
@@ -36,3 +39,10 @@ export interface Data {
   cta_text: CtaText;
   sections: Section[];
 }
+
+export interface Course {
+  id: string;
+  image: string;
+  title: string;
+}
+
