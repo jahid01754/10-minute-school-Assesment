@@ -145,9 +145,7 @@ export default function HeroCard({
           </Swiper>
         </>
       ) : (
-        <p className="p-4 text-center text-white">
-          No media content available.
-        </p>
+        <p className="p-4 text-center text-white">No media content available</p>
       )}
     </div>
   );
