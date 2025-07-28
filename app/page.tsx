@@ -2,14 +2,13 @@ import Header from "@/Components/Header/header";
 import HeroSection from "@/Components/HeroSection/heroSection";
 import { Data } from "@/types/types";
 
-interface PageProps {
-  searchParams: {
-    lang?: string;
-  };
-}
-
-export default async function Home({ searchParams }: PageProps) {
-  const language = searchParams.lang || "en";
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>;
+}) {
+  const resolvedSearchParams = await searchParams;
+  const language = resolvedSearchParams.lang || "en";
   let product: Data | null = null;
 
   try {
