@@ -5,7 +5,6 @@ export interface Medium {
   thumbnail_url?: string;
 }
 
-
 export interface Checklist {
   id: number;
   text: string;
@@ -45,4 +44,3 @@ export interface Course {
   image: string;
   title: string;
 }
-

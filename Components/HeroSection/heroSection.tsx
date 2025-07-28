@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import HeroCard from "../HeroCard/heroCard";
 import { Data } from "@/types/types";
+import type { Swiper as SwiperType } from "swiper";
 
 type HomeProps = {
   data: Data | null;
 };
 
 export default function HeroSection({ data }: HomeProps) {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   useEffect(() => {
     console.log("HeroSection Data: ", data);
@@ -34,10 +35,11 @@ export default function HeroSection({ data }: HomeProps) {
           </div>
 
           {/* Right side */}
-          <HeroCard 
-            media={media} 
-            thumbsSwiper={thumbsSwiper} 
-            setThumbsSwiper={setThumbsSwiper} />
+          <HeroCard
+            media={media}
+            thumbsSwiper={thumbsSwiper}
+            setThumbsSwiper={setThumbsSwiper}
+          />
         </div>
       </div>
     </div>

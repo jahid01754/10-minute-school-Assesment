@@ -11,6 +11,8 @@ import "swiper/css/thumbs";
 
 import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
 
+import type { Dispatch, SetStateAction } from "react";
+
 type HeroCardProps = {
   media: Array<{
     resource_type: string;
@@ -18,7 +20,7 @@ type HeroCardProps = {
     thumbnail_url?: string;
   }>;
   thumbsSwiper: SwiperType | null;
-  setThumbsSwiper: (swiper: SwiperType | null) => void;
+  setThumbsSwiper: Dispatch<SetStateAction<SwiperType | null>>;
 };
 
 export default function HeroCard({
@@ -141,10 +143,11 @@ export default function HeroCard({
               </SwiperSlide>
             ))}
           </Swiper>
-
         </>
       ) : (
-        <p className="p-4 text-center text-white">No media content available.</p>
+        <p className="p-4 text-center text-white">
+          No media content available.
+        </p>
       )}
     </div>
   );
